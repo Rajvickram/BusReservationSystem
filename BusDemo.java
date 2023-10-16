@@ -6,6 +6,10 @@ class BusDemo {
         Scanner sc = new Scanner(System.in);
 
         ArrayList<Bus> buses = new ArrayList<Bus>();
+        ArrayList<Booking> bookings = new ArrayList<Booking>();
+
+
+
         buses.add(new Bus(1, true, 3));
         buses.add(new Bus(2, false, 5));
         buses.add(new Bus(3,true, 2));
@@ -23,7 +27,7 @@ class BusDemo {
             userOpt = sc.nextInt();
 
             if (userOpt == 1) {
-                System.out.println("Booking...........");
+                Booking booking = new Booking();
             }
         }
     }
