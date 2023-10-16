@@ -7,6 +7,12 @@ class Bus {
 
     private int capacity;
 
+    Bus(int busNo,boolean ac,int capacity) {
+        this.busNo = busNo;
+        this.ac = ac;
+        this.capacity = capacity;
+    }
+
     public void setBusNo(int busNo) {
         this.busNo = busNo;
     }
