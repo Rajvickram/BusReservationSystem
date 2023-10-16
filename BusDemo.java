@@ -28,6 +28,14 @@ class BusDemo {
 
             if (userOpt == 1) {
                 Booking booking = new Booking();
+                if (booking.isAvailable(bookings, buses)) {
+                    bookings.add(booking);
+                    System.out.println("Your Booking is Confirmed");
+                }
+                else {
+                    System.out.println("Sorry. Bus is Full Please u can try another Bus..");
+                    
+                }
             }
         }
     }

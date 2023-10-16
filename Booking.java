@@ -14,16 +14,34 @@ class Booking {
         System.out.println("Enter the Bus No : ");
         busNo = scan.nextInt();
         System.out.println("Enter the Date (dd-mm-yyyy) : ");
-        String dateinput = scan.nextLine();
+        String dateinput = scan.next();
 
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
 
         try {
             date = dateFormat.parse(dateinput);
         } catch (ParseException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
+    }
 
+    public boolean isAvailable(ArrayList<Booking> bookings, ArrayList<Bus> buses) {
+        int capacity = 0;
+
+        for (Bus bus : buses) {
+            if (bus.getBusNo() == busNo) {
+                capacity = bus.getCapacity();
+            }
+        }
+
+
+        int booked = 0;
+
+        for (Booking book : bookings) {
+            if (book.busNo == busNo && book.date.equals(date))
+            booked++;
+        }
+
+        return booked<capacity ? true : false;
     }
 }
